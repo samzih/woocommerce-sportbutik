@@ -1,5 +1,6 @@
 languages/
 plugins/*
+!plugins/sams-product-share-button/
 themes/*
 !themes/storefront-child/
 upgrade/
