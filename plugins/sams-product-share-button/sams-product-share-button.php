@@ -7,6 +7,14 @@
  * Author: Sam Azimi
  */
 
+// loads the plugin's styling file
+function load_plugin_style()
+{
+    wp_enqueue_style('style', plugins_url() . '/sams-product-share-button/sams-product-share-button-style.css', '', false, 'all');
+}
+add_action('wp_enqueue_scripts', 'load_plugin_style');
+
+
 // share social media button
 function sam_social_share_button()
 {
