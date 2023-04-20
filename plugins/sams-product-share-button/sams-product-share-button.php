@@ -6,3 +6,19 @@
  * Version: 1.0
  * Author: Sam Azimi
  */
+
+// share social media button
+function sam_social_share_button()
+{
+    global $post;
+    $url = get_permalink($post->ID); // gets the permalink of the current product
+    $title = get_the_title($post->ID); // gets the title of the current product
+
+    // create the Facebook sharing URL by appending the product URL to the Facebook sharing endpoint
+    $facebook_url = 'https://www.facebook.com/sharer/sharer.php?u=' . urlencode($url);
+
+    // output the HTML code for the Facebook sharing button
+    echo '<a href="' . esc_url($facebook_url) . '" class="button social-share facebook share-on-facebook" target="_blank"><i class="fab fa-facebook-square"></i> ' . __('Dela på Facebook') . '</a>&nbsp;';
+}
+// add the sam_social_share_button function to the woocommerce_share action hook
+add_action('woocommerce_share', 'sam_social_share_button');
