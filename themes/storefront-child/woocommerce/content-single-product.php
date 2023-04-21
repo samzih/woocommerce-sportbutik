@@ -77,3 +77,13 @@ if ( post_password_required() ) {
 
 <!-- Back to top "button" that takes the user to the top of the page -->
 <a href="" class="back-to-top">Tillbaka till toppen ⬆️</a>
+
+<!-- uses the jQuery library to smoothly animate the scrolling of the page to the top -->
+<script>
+    jQuery(document).ready(function($) {
+        $(".back-to-top").on("click", function(e) {
+            e.preventDefault();
+            $("html, body").animate({scrollTop: 0}, 800);
+        });
+    });
+</script>
